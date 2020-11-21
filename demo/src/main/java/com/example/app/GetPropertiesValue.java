@@ -111,5 +111,34 @@ public class GetPropertiesValue {
 		}
 		return uploadVideoApiPath;
 	}
+	
+	/**
+	 * updataFiles.properties解析文件，提取文件资源库path
+	 */
+	public static String getUpdataFiles() {
+		String path = null;
+		Properties properties = new Properties();
+		// 使用InPutStream流读取properties文件
+		try {
+			InputStream inputStream = new BufferedInputStream(
+					new FileInputStream(new File("jsonFile/updataFiles.properties")));
+			properties.load(inputStream);
+			//测试环境：
+			path = properties.getProperty("Path");
+			
+			//本地host:
+			//path = properties.getProperty("Path_localhost");
+			
+			System.out.println("Path: " + path);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return path;
+
+	}
 
 }

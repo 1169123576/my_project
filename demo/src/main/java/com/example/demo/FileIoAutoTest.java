@@ -55,8 +55,8 @@ public class FileIoAutoTest {
 		// String password = "ds123456";
 		// 以下信息不用每次修改,在本机D盘下新建opload_file文件夹，把资源文件放在文件夹下
 		String globeUrl = "http://api.edog-online.cn";
-		String localVideoPath = "D:\\opload_file\\" + videoFile;
-		String localImagePath = "D:\\opload_file\\" + imageFile;
+		String localVideoPath = GetPropertiesValue.getUpdataFiles() + videoFile;
+		String localImagePath = GetPropertiesValue.getUpdataFiles() + imageFile;
 		String inVideoBucket = "wam-videos";
 		String inImageBucket = "wam-image";
 		String imgType = "image";
